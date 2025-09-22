@@ -69,5 +69,3 @@ The complete workflow, including data loading, preprocessing, training, evaluati
 ## References
 - Iglovikov, V., & Shvets, A. (2018). *TernausNet: U-Net with VGG11 Encoder Pre-Trained on ImageNet for Image Segmentation.*  
 - DeepGlobe 2018 Road Extraction Challenge Dataset.
-- Iglovikov, V., & Shvets, A. (2018). *TernausNet: U-Net with VGG11 Encoder Pre-Trained on ImageNet for Image Segmentation.*  
-- DeepGlobe 2018 Road Extraction Challenge Dataset.  
