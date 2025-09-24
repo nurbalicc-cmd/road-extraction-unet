@@ -67,9 +67,10 @@ Below are examples comparing input images, ground-truth masks, and model predict
 
 ## Reproducibility
 You can reproduce the results by running the Kaggle notebook:  
-👉 [Road Extraction U-Net CNN – Kaggle Notebook (v6)](https://www.kaggle.com/code/nurbali/road-extraction-unet-cnn)
+[Road Extraction U-Net CNN – Kaggle Notebook (v6)](https://www.kaggle.com/code/nurbali/road-extraction-unet-cnn)
 
 ---
-
-## License
-This project is distributed under the MIT License. See [LICENSE](LICENSE) for details.  
+## References
+- DeepGlobe 2018 Road Extraction Challenge: [https://competitions.codalab.org/competitions/18467](https://competitions.codalab.org/competitions/18467)  
+- Ronneberger, O., Fischer, P., & Brox, T. (2015). **U-Net: Convolutional Networks for Biomedical Image Segmentation.** arXiv:1505.04597  
+- Bootcamp-provided project guidelines and resources (Global AI Hub, 2025).  
