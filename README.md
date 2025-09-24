@@ -1,71 +1,75 @@
-# Road Extraction Using U-Net
+# Road Extraction with U-Net (AI Bootcamp 2025)
 
-## Project Overview
-This project implements a deep learning pipeline for automatic road extraction from satellite imagery using a U-Net convolutional neural network architecture. The objective is to segment road networks accurately and efficiently from high-resolution aerial and satellite images, supporting applications in urban planning, navigation systems, and disaster response.
+## Introduction
+This project focuses on **road extraction from satellite imagery** using a **U-Net convolutional neural network (CNN)**. The primary goal is to automate the segmentation of roads from aerial images, which is a crucial step for applications in **autonomous navigation, urban planning, and disaster management**.  
 
-## Dataset
-- **DeepGlobe Road Extraction Dataset**
-- High-resolution satellite images with annotated binary road masks
-- Data split: training, validation, and testing subsets
-
-## Preprocessing
-- Conversion of images and masks into standardized input format
-- Image resizing and normalization
-- Data augmentation to improve model robustness, including:
-  - Rotation
-  - Horizontal and vertical flipping
-  - Random zoom
-
-## Model Architecture
-- **Base Model:** U-Net
-- Layers:
-  - Convolutional layers
-  - Max-pooling layers
-  - Dropout layers (regularization)
-  - Fully connected dense layers
-- Activation functions: ReLU and Sigmoid
-- Optimizer: Adam (learning rate = 1e-4)
-- Loss function: Binary Cross-Entropy combined with Dice Loss
-
-## Training Procedure
-- Number of epochs: 10
-- Batch size: 4
-- Metrics monitored:
-  - Accuracy
-  - Dice Coefficient
-  - Intersection over Union (IoU)
-
-## Evaluation
-- Validation Accuracy: ~97.2%
-- Dice Coefficient: ~0.66
-- IoU: ~0.53
-- Loss and metric curves were tracked for both training and validation phases
-
-## Results
-- Training curves:  
-  ![Training Curves](training_curves.png)
-
-- Example segmentation results:  
-  ![Segmentation Results](fig_results.png)
-
-## Saved Artifacts
-The following files are included in the repository for reproducibility:
-- Trained model: `unet_ft_best.keras`
-- Model weights: `unet_final.weights.h5`
-- Metrics:
-  - `metrics_table.csv`
-  - `metrics.json`
-  - `val_metrics.json`
-- Figures:
-  - `training_curves.png`
-  - `fig_results.png`
-
-## Reproducibility
-The complete workflow, including data loading, preprocessing, training, evaluation, and visualization, is available in the Kaggle notebook:  
-[Link to Kaggle Notebook] https://www.kaggle.com/code/nurbali/road-extraction-unet-cnn
+This repository is part of the **Global AI Hub & Akbank AI Bootcamp 2025** program.  
 
 ---
 
-## References
-- Iglovikov, V., & Shvets, A. (2018). *TernausNet: U-Net with VGG11 Encoder Pre-Trained on ImageNet for Image Segmentation.*  
-- DeepGlobe 2018 Road Extraction Challenge Dataset.
+## Dataset
+- **Source:** [DeepGlobe Road Extraction Dataset](https://competitions.codalab.org/competitions/18467)  
+- **Content:** High-resolution satellite images and corresponding binary road masks.  
+- **Split:**  
+  - Training: 4,980 images  
+  - Validation: 1,246 images  
+- Preprocessing included resizing images to 256×256 pixels and normalizing pixel values.  
+
+---
+
+## Methodology
+- **Model:** U-Net (lightweight version for faster training).  
+- **Framework:** TensorFlow / Keras.  
+- **Training setup:**  
+  - Optimizer: Adam  
+  - Loss: Binary Cross-Entropy + Dice loss  
+  - Metrics: Accuracy, Dice Coefficient, IoU  
+
+---
+
+## Results
+
+### Metrics
+| Metric      | Train | Validation |
+|-------------|-------|------------|
+| Accuracy    | 0.97+ | ~0.97      |
+| Dice Coef.  | ~0.67 | ~0.66      |
+| IoU Metric  | ~0.50 | ~0.49      |
+| Loss        | ~0.39 | ~0.43      |
+
+---
+
+### Training Curves
+![Training Curves](training_curves.png)
+
+---
+
+### Example Predictions
+Below are examples comparing input images, ground-truth masks, and model predictions:
+
+![Example Results](fig_results.png)
+
+---
+
+## Discussion
+- The U-Net model successfully learned to extract road networks from satellite imagery.  
+- Performance is consistent across training and validation, showing limited overfitting.  
+- Small roads and intersections remain challenging, reflecting the need for either more data augmentation or deeper architectures.  
+
+---
+
+## Future Work
+- Integrating **attention-based U-Net** or **transformer-based architectures** to improve fine-grained road detection.  
+- Experimenting with **data augmentation techniques** for robustness.  
+- Deploying the trained model in a **web-based tool (Streamlit)** for real-time road segmentation.  
+
+---
+
+## Reproducibility
+You can reproduce the results by running the Kaggle notebook:  
+👉 [Road Extraction U-Net CNN – Kaggle Notebook (v6)](https://www.kaggle.com/code/nurbali/road-extraction-unet-cnn)
+
+---
+
+## License
+This project is distributed under the MIT License. See [LICENSE](LICENSE) for details.  
